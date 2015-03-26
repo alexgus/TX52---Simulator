@@ -31,40 +31,48 @@ public class WheelRobot : Robot
     
     public override void Move(Direction dir, float? distance = null)
     {
+        JointMotor m = new JointMotor();
+        JointMotor n = new JointMotor();
+
         switch (dir)
         {
             case Direction.FORWARD:
-                /*JointMotor m = new JointMotor();
-                m.force = 1000;
-                m.targetVelocity = 100;
-                hingeJoint.motor = m;*/
+                m.force = 1;
+                m.targetVelocity = 360;
 
-                w1.transform.Rotate(Vector3.down * maxSpeed);
-                w2.transform.Rotate(Vector3.down * maxSpeed);
-                w3.transform.Rotate(Vector3.up * maxSpeed);
-                w4.transform.Rotate(Vector3.up * maxSpeed);
-                w1.rigidbody.AddRelativeTorque(Vector3.down * maxSpeed);
-                w2.rigidbody.AddRelativeTorque(Vector3.down * maxSpeed);
-                w3.rigidbody.AddRelativeTorque(Vector3.up * maxSpeed);
-                w4.rigidbody.AddRelativeTorque(Vector3.up * maxSpeed);
-                break;
-            case Direction.BACKWARD:
-                /*JointMotor n = new JointMotor();
-                n.force = -1000;
-                n.targetVelocity = -100;
-                hingeJoint.motor = n;*/
+                n.force = 1;
+                n.targetVelocity = -360;
 
                 w1.transform.Rotate(Vector3.up * maxSpeed);
                 w2.transform.Rotate(Vector3.up * maxSpeed);
                 w3.transform.Rotate(Vector3.down * maxSpeed);
                 w4.transform.Rotate(Vector3.down * maxSpeed);
-                w1.rigidbody.AddRelativeTorque(Vector3.up * maxSpeed);
-                w2.rigidbody.AddRelativeTorque(Vector3.up * maxSpeed);
-                w3.rigidbody.AddRelativeTorque(Vector3.down * maxSpeed);
-                w4.rigidbody.AddRelativeTorque(Vector3.down * maxSpeed);
+
+                break;
+            case Direction.BACKWARD:
+                m.force = 1;
+                m.targetVelocity = -360;
+
+                n.force = 1;
+                n.targetVelocity = 360;
+
+                w1.transform.Rotate(Vector3.down * maxSpeed);
+                w2.transform.Rotate(Vector3.down * maxSpeed);
+                w3.transform.Rotate(Vector3.up * maxSpeed);
+                w4.transform.Rotate(Vector3.up * maxSpeed);
                 break;
             default: break;
         }
+
+        w1.hingeJoint.motor = m;
+        w2.hingeJoint.motor = m;
+        w3.hingeJoint.motor = n;
+        w4.hingeJoint.motor = n;
+
+        w1.hingeJoint.useMotor = true;
+        w2.hingeJoint.useMotor = true;
+        w3.hingeJoint.useMotor = true;
+        w4.hingeJoint.useMotor = true;
     }
     public override void Rotate(Direction dir, float? angle = null)
     {
@@ -76,26 +84,22 @@ public class WheelRobot : Robot
                 w2.transform.Rotate(Vector3.down * turnSpeed);
                 w3.transform.Rotate(Vector3.down * turnSpeed);
                 w4.transform.Rotate(Vector3.down * turnSpeed);
-                w1.rigidbody.AddRelativeTorque(Vector3.down * turnSpeed);
-                w2.rigidbody.AddRelativeTorque(Vector3.down * turnSpeed);
-                w3.rigidbody.AddRelativeTorque(Vector3.down * turnSpeed);
-                w4.rigidbody.AddRelativeTorque(Vector3.down * turnSpeed);
                 break;
             case Direction.RIGHT: 
                 w1.transform.Rotate(Vector3.up * turnSpeed);
                 w2.transform.Rotate(Vector3.up * turnSpeed);
                 w3.transform.Rotate(Vector3.up * turnSpeed);
                 w4.transform.Rotate(Vector3.up * turnSpeed);
-                w1.rigidbody.AddRelativeTorque(Vector3.up * turnSpeed);
-                w2.rigidbody.AddRelativeTorque(Vector3.up * turnSpeed);
-                w3.rigidbody.AddRelativeTorque(Vector3.up * turnSpeed);
-                w4.rigidbody.AddRelativeTorque(Vector3.up * turnSpeed);
                 break;
             default: break;
         }
     }
     public override void Stop(Stop axe)
     {
+        w1.hingeJoint.useMotor = false;
+        w2.hingeJoint.useMotor = false;
+        w3.hingeJoint.useMotor = false;
+        w4.hingeJoint.useMotor = false;
 
     }
 }
