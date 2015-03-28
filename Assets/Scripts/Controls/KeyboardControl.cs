@@ -34,12 +34,12 @@ public class KeyboardControl : MonoBehaviour {
             robot.Rotate(Direction.RIGHT);
             Debug.Log("RIGHT");
         }
-        else
+        /*else
         {
             //Don't Rotate (stop if it was rotating), No order was given
             robot.Stop(Stop.ROTATE);
             Debug.Log("STOP ROTATING");
-        }
+        }*/
 
         if (ver < 0)
         {
@@ -54,13 +54,19 @@ public class KeyboardControl : MonoBehaviour {
             robot.Move(Direction.FORWARD);
             Debug.Log("FORWARD");
         }
-        else
+        /*else
         {
             //Don't Move (stop if it was rotating), No order was given
             robot.Stop(Stop.MOVE);
             Debug.Log("STOP MOVING");
+        }*/
 
-
+        if (ver == 0 && hor == 0)
+        {
+            robot.Stop(Stop.MOVE);
+            Debug.Log("STOP MOVING");
+            robot.Stop(Stop.ROTATE);
+            Debug.Log("STOP ROTATING");
         }
 	}
 

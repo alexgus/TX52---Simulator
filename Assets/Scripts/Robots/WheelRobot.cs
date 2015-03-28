@@ -38,10 +38,10 @@ public class WheelRobot : Robot
         {
             case Direction.FORWARD:
                 m.force = 1;
-                m.targetVelocity = 360;
+                m.targetVelocity = 720;
 
                 n.force = 1;
-                n.targetVelocity = -360;
+                n.targetVelocity = -720;
 
                 w1.transform.Rotate(Vector3.up * maxSpeed);
                 w2.transform.Rotate(Vector3.up * maxSpeed);
@@ -64,28 +64,28 @@ public class WheelRobot : Robot
             default: break;
         }
 
-        w1.hingeJoint.motor = m;
-        w2.hingeJoint.motor = m;
-        w3.hingeJoint.motor = n;
-        w4.hingeJoint.motor = n;
+        this.addMotorJoint(m, n);
 
-        w1.hingeJoint.useMotor = true;
-        w2.hingeJoint.useMotor = true;
-        w3.hingeJoint.useMotor = true;
-        w4.hingeJoint.useMotor = true;
     }
     public override void Rotate(Direction dir, float? angle = null)
     {
+        JointMotor m = new JointMotor();
         
         switch (dir)
         {
             case Direction.LEFT: 
+                m.force = 1;
+                m.targetVelocity = 360;
+
                 w1.transform.Rotate(Vector3.down * turnSpeed);
                 w2.transform.Rotate(Vector3.down * turnSpeed);
                 w3.transform.Rotate(Vector3.down * turnSpeed);
                 w4.transform.Rotate(Vector3.down * turnSpeed);
                 break;
             case Direction.RIGHT: 
+                m.force = 1;
+                m.targetVelocity = -360;
+
                 w1.transform.Rotate(Vector3.up * turnSpeed);
                 w2.transform.Rotate(Vector3.up * turnSpeed);
                 w3.transform.Rotate(Vector3.up * turnSpeed);
@@ -93,13 +93,30 @@ public class WheelRobot : Robot
                 break;
             default: break;
         }
+
+        this.addMotorJoint(m, m);
+
     }
     public override void Stop(Stop axe)
     {
-        w1.hingeJoint.useMotor = false;
-        w2.hingeJoint.useMotor = false;
-        w3.hingeJoint.useMotor = false;
-        w4.hingeJoint.useMotor = false;
+        this.useMotor(false);
+    }
 
+    private void useMotor(bool status){
+        
+        w1.hingeJoint.useMotor = status;
+        w2.hingeJoint.useMotor = status;
+        w3.hingeJoint.useMotor = status;
+        w4.hingeJoint.useMotor = status;
+    }
+
+    private void addMotorJoint(JointMotor m, JointMotor n)
+    {
+        this.useMotor(true);
+        
+        w1.hingeJoint.motor = m;
+        w2.hingeJoint.motor = m;
+        w3.hingeJoint.motor = n;
+        w4.hingeJoint.motor = n;
     }
 }
