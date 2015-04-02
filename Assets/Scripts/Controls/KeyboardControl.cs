@@ -12,7 +12,7 @@ public class KeyboardControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         //If this controler isn't selected, don't execute the code
         //The controler could also be managed by another script (ControlerManager ?) and be disabled id not used
         if (!selected)
