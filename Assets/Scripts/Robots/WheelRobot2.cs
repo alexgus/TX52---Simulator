@@ -25,6 +25,7 @@ public class WheelRobot2 : Robot
                 wBL.brakeTorque = 0.0f;
                 wBL.motorTorque = motor;
                 wBR.motorTorque = motor;
+                Debug.Log("BL:\t" + wBL.rpm + "\tBR:\t" + wBR.rpm);
                 break;
 
             case Direction.BACKWARD:
@@ -63,7 +64,9 @@ public class WheelRobot2 : Robot
 
     public void Start()
     {
-        this.GetComponentInChildren<Rigidbody>().centerOfMass = centerOfMass;
+        Rigidbody rigidbody = this.GetComponentInChildren<Rigidbody>();
+       rigidbody.centerOfMass = centerOfMass;
+       
     }
 
     public override void Stop(Stop axe)
