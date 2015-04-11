@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WheelRobot2 : Robot
+public class WheelRobot_WheelCol : Robot
 {
     public Vector3 centerOfMass;
 
