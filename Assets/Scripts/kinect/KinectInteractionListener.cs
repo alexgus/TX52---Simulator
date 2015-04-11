@@ -1,14 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class KinectInteractionListener : MonoBehaviour {
     public int handType = 0;
-    public GUIText debug;
+   // public GUIText debug;
 
-    public GameObject virtual_hand;
+    //public GameObject virtual_hand;
 
-    public float followSpeed = 5.0f;
+  //  public float followSpeed = 5.0f;
 
     private Plane XZPlane = new Plane(Vector3.up, Vector3.zero);
     private KinectInteractionManager manager;
@@ -30,22 +30,23 @@ public class KinectInteractionListener : MonoBehaviour {
 
         BehaviourData gripAndFollowData = manager.getBehaviourDataOf(KinectInteractionBehaviour.GripAndFollow);
 
-        debug.text = "State : " + (GripAndFollowState)gripAndFollowData.state;
-        debug.text += "\nPosition :" + gripAndFollowData.currPosition;
+        
+        //debug.text = "State : " + (GripAndFollowState)gripAndFollowData.state;
+        //debug.text += "\nPosition :" + gripAndFollowData.currPosition;
 
-        virtual_hand.transform.localPosition = GetPositionOnXZPlane(gripAndFollowData.screenPosition);
+        //virtual_hand.transform.localPosition = GetPositionOnXZPlane(gripAndFollowData.screenPosition);
 
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
 
-        if (gripAndFollowData.state == (int)GripAndFollowState.FOLLOW)
-        {
-            float moveH = virtual_hand.transform.position.x - transform.position.x;
-            float moveV = virtual_hand.transform.position.z - transform.position.z; 
+        //if (gripAndFollowData.state == (int)GripAndFollowState.FOLLOW)
+        //{
+        //    //float moveH = virtual_hand.transform.position.x - transform.position.x;
+        //    //float moveV = virtual_hand.transform.position.z - transform.position.z; 
 
-            Vector3 movement = new Vector3(moveH, 0, moveV);
-            rigidbody.AddForce(movement * followSpeed);
-        }
+        //    Vector3 movement = new Vector3(moveH, 0, moveV);
+        //    rigidbody.AddForce(movement * followSpeed);
+        //}
             
 
         //debug.transform.position = new Vector3(gripAndFollowData.currPosition.x/2, 1f - gripAndFollowData.currPosition.y , 0) ;

@@ -73,19 +73,19 @@ public class WheelRobot_WheelCol : Robot
     {
         switch (axe)
         {
-            case global::Stop.MOVE:
-                wBL.motorTorque = 0.0f;
-                wBR.motorTorque = 0.0f;
-                wBR.brakeTorque = brake;
-                wBL.brakeTorque = brake;
-                break;
-
             case global::Stop.ROTATE:
                 wFL.steerAngle = 0.0f;
                 wFR.steerAngle = 0.0f;
                 break;
 
-            case global::Stop.FULLSTOP: break;
+            case global::Stop.MOVE:
+            case global::Stop.FULLSTOP: 
+                wBL.motorTorque = 0.0f;
+                wBR.motorTorque = 0.0f;
+                wBR.brakeTorque = brake;
+                wBL.brakeTorque = brake;
+                 
+                break;
         }
     }
 }
