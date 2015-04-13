@@ -55,7 +55,7 @@ public class KinectControl2H : MonoBehaviour
                 Debug.Log("R Follow");
                 float ver= rightData.currPosition.y - handOrigin.y;
                 float hor = rightData.currPosition.x - handOrigin.x;
-                Debug.Log("R RobotControl1H (" + hor + " , " + ver + (" )"));
+                //Debug.Log("R RobotControl1H (" + hor + " , " + ver + (" )"));
                 if (ver > tolerance)
                 {
                     curRobot.Move(Direction.BACKWARD);

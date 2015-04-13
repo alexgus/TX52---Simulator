@@ -119,6 +119,8 @@ public class KinectInteractionManager {
         );
     }
 
+    private bool isDING = false;
+
     private void handleGripAndFollowBehaviour (ref BehaviourData data) {
         // a switch to handle state's changings
         switch ((GripAndFollowState)data.state)
@@ -126,6 +128,7 @@ public class KinectInteractionManager {
             case GripAndFollowState.NONE:
                 if (client.HandIsOpen())
                 {
+                    isDING = false;
                     data.state = (int)GripAndFollowState.OPEN_DETECTED;
                     data.startTime = Time.time;
                     data.lastPosition = new Vector2(data.currPosition.x, data.currPosition.y);
@@ -133,21 +136,25 @@ public class KinectInteractionManager {
                 break;
 
             case GripAndFollowState.OPEN_DETECTED:
-                if (client.HandIsClose() || this.HandIsMoved(data.lastPosition, data.currPosition))
+                if (client.HandIsClose()/* || this.HandIsMoved(data.lastPosition, data.currPosition)*/)
                 {
                     data.state = (int)GripAndFollowState.NONE;
                 }
                 if (Time.time - data.startTime > 2.0f)
                 {
                     data.state = (int)GripAndFollowState.DING;
+                    isDING = true;
+                }
+                if (isDING)
+                {
+                    if (client.HandIsClose())
+                    {
+                        data.state = (int)GripAndFollowState.FOLLOW;
+                    }
                 }
                 break;
 
             case GripAndFollowState.DING:
-                if (this.HandIsMoved(data.lastPosition, data.currPosition))
-                {
-                    data.state = (int)GripAndFollowState.NONE;
-                }
                 if (client.HandIsClose())
                 {
                     data.state = (int)GripAndFollowState.FOLLOW;
@@ -155,6 +162,7 @@ public class KinectInteractionManager {
                 break;
 
             case GripAndFollowState.FOLLOW:
+                isDING = false;
                 if (client.HandIsOpen())
                 {
                     data.state = (int)GripAndFollowState.NONE;

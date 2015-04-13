@@ -25,7 +25,7 @@ public class WheelRobot_WheelCol : Robot
                 wBL.brakeTorque = 0.0f;
                 wBL.motorTorque = motor;
                 wBR.motorTorque = motor;
-                Debug.Log("BL:\t" + wBL.rpm + "\tBR:\t" + wBR.rpm);
+//                Debug.Log("BL:\t" + wBL.rpm + "\tBR:\t" + wBR.rpm);
                 break;
 
             case Direction.BACKWARD:

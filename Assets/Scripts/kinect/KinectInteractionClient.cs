@@ -71,7 +71,6 @@ public class KinectInteractionClient
                 // Don't take the interaction event "None"
                 if (currhandEventType != InteractionHandEventType.None)
                     lastHandEventType = currhandEventType;
-
             }
             catch (Exception e)
             {
