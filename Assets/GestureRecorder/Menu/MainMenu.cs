@@ -15,9 +15,19 @@ public class MainMenu : MonoBehaviour {
 	// the amount of behavior
 	private int behaviorCount = 0;
 
+    private bool save = false;
+
 	void Start() {
 		dummyGesture.SetActive(false);
-	}
+
+        if (!save)
+        {
+            // Load old gesture and display it
+            DynGesture d = Exporter.import("./test.xml");
+            d.Listener = Manager.instance.Actions[0].listener;
+            NewGesture(d);
+        }
+   	}
 
 
 	public void OnNewGestureClick() {
@@ -33,6 +43,9 @@ public class MainMenu : MonoBehaviour {
 		// saves the new gesture
 		Manager.instance.gestures.Add(ges);
 
+        if (save)
+            Exporter.export("./test.xml", ges);
+
 		GameObject newGes = (GameObject)Instantiate(dummyGesture);
 		newGes.SetActive(true);
 		newGes.GetComponentInChildren<Text>().text = ges.Name;
@@ -43,7 +56,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 
-	public void OnTestClick() {
+	public void OnTestClick() {    
 		kinectAvatar.GetComponent<KinectAvatar>().Analyzer.Mode = GestureAnalyzer.ModeEnum.ANALYSING;
 	}
 }

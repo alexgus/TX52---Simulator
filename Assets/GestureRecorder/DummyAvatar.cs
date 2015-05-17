@@ -48,7 +48,8 @@ public class DummyAvatar : MonoBehaviour {
 		initialRotations = new Quaternion[joints.Length];
 
 		for (int i = 0; i < joints.Length; i++) {
-			initialRotations[i] = joints[i].rotation;
+             if(joints[i] != null)
+			    initialRotations[i] = joints[i].rotation;
 		}
 	}
 
