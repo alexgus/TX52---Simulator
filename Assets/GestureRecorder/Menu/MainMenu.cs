@@ -29,7 +29,7 @@ public class MainMenu : MonoBehaviour {
         if (save == Recorder.LOAD)
         {
             // Load old gesture and display it
-            DynGesture d = Exporter.import("./test.xml");
+            DynGesture d = Exporter.import("./Assets/RecordedGesture/Clap.xml");
             d.Listener = Manager.instance.Actions[0].listener;
             NewGesture(d);
         }

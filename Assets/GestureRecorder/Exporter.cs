@@ -65,7 +65,7 @@ public class Exporter{
                 )
             );
 
-        root.Save("../RecordedGesture/"+ges.Name+".xml");
+        root.Save("./Assets/RecordedGesture/"+ges.Name+".xml");
     }
 
     public static DynGesture import(string filename)
