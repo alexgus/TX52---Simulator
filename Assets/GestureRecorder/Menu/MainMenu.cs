@@ -15,12 +15,18 @@ public class MainMenu : MonoBehaviour {
 	// the amount of behavior
 	private int behaviorCount = 0;
 
-    private bool save = false;
+    public enum Recorder
+    {
+        SAVE,
+        LOAD
+    }
+
+    public Recorder save = Recorder.SAVE;
 
 	void Start() {
 		dummyGesture.SetActive(false);
 
-        if (!save)
+        if (save == Recorder.LOAD)
         {
             // Load old gesture and display it
             DynGesture d = Exporter.import("./test.xml");
@@ -43,8 +49,8 @@ public class MainMenu : MonoBehaviour {
 		// saves the new gesture
 		Manager.instance.gestures.Add(ges);
 
-        if (save)
-            Exporter.export("./test.xml", ges);
+        if (save == Recorder.SAVE)
+            Exporter.export(ges);
 
 		GameObject newGes = (GameObject)Instantiate(dummyGesture);
 		newGes.SetActive(true);

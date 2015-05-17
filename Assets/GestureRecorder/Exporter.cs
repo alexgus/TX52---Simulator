@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 public class Exporter{
 
-    public static void export(string filename, DynGesture ges)
+    public static void export(DynGesture ges)
     {
         XElement listMC = new XElement("listMC");
 
@@ -65,7 +65,7 @@ public class Exporter{
                 )
             );
 
-        root.Save(filename);
+        root.Save("../RecordedGesture/"+ges.Name+".xml");
     }
 
     public static DynGesture import(string filename)
