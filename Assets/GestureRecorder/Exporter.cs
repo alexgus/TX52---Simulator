@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -83,14 +83,12 @@ public class Exporter{
 
         XmlNodeList listMC = doc.DocumentElement.SelectNodes("/dyngesture/mouvement/listMC/mouvementCheckPoint");
         List<GestureAnalyzer.MovementCheckpoint> lMoveCheckpoint = new List<GestureAnalyzer.MovementCheckpoint>();
-        Debug.Log("listMC size " + listMC.Count);
         foreach (XmlNode mc in listMC)
         {
             float duration = float.Parse(mc.SelectSingleNode("duration").InnerText);
             XmlNodeList listJM = mc.LastChild.SelectNodes("jointMouvement");
 
             List<GestureAnalyzer.JointMovement> jmList = new List<GestureAnalyzer.JointMovement>();
-            Debug.Log("listJM size " + listJM.Count);
             foreach (XmlNode n in listJM)
             {
                 GestureAnalyzer.JointMovement jm = new GestureAnalyzer.JointMovement();
