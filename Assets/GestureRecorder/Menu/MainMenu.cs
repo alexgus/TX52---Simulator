@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.IO;
 
 public class MainMenu : MonoBehaviour {
 	// the second menu where you can add a new gesture
@@ -28,10 +29,18 @@ public class MainMenu : MonoBehaviour {
 
         if (save == Recorder.LOAD)
         {
+            string folderPath = "./Assets/RecordedGesture/";
+            
+        string [] gesturesFiles =  Directory.GetFiles(folderPath, "*.xml");
+        foreach (string s in gesturesFiles)
+        {
+            Debug.Log("Loading gesture : " + s);
             // Load old gesture and display it
-            DynGesture d = Exporter.import("./Assets/RecordedGesture/Clap.xml");
+            DynGesture d = Exporter.import(s);
             d.Listener = Manager.instance.Actions[0].listener;
             NewGesture(d);
+        }
+           
         }
    	}
 
