@@ -22,8 +22,11 @@ public class Manager : MonoBehaviour {
 	public ActionCouple[] Actions;
 
 	private void Awake() {
-		instance = this;
+        instance = this;
+
+        // Launch analysis
         importGestures();
+
 		// initializes the actions
 		foreach (ActionCouple a in Actions) {
 			a.listener = a.go.GetComponent(typeof(GestureListener)) as GestureListener;

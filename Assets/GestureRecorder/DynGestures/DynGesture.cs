@@ -44,6 +44,8 @@ public class DynGesture {
 		// indicates whether or not we are at the end of the current checkpoint
 		bool finalPosition = true;
 
+        //Debug.Log("[" + this.Name + "]Current checkpoint : " + currentCheckpoint + "/" + Movement.checkpoints.Count);
+
 		// compares the position of the joints that define the gesture with the current state
 		foreach (GestureAnalyzer.JointMovement mv in Movement.checkpoints[currentCheckpoint].jointMovements) {
 			joint = joints[mv.joint];
@@ -63,7 +65,7 @@ public class DynGesture {
 				// if the position aren't roughtly the same, then we're not at the position we want
 				if (diff.magnitude > 0.15) {
 					finalPosition = false;
-				}
+                }
 			}
 		}
 
@@ -129,9 +131,14 @@ public class DynGesture {
 			// the gesture is not a repetitive gesture
 
 			if (finalPosition) {
+                /*Debug.Log("Entering in final position !");
+                Debug.Log("gestureEnded : " + gestureEnded);
+                Debug.Log("checkpointStarted : " + checkpointStarted);
+                Debug.Log("checkGesturePercents(state) : " + checkGesturePercents(state));*/
 				if (!gestureEnded && checkpointStarted && checkGesturePercents(state)) {
 					// we are at the final position of the checkpoint and the movements were validated
-
+    //              Debug.Log("Final [" + this.Name + "]Current checkpoint : " + currentCheckpoint + "/" + Movement.checkpoints.Count);
+                    
 					if (currentCheckpoint + 1 != Movement.checkpoints.Count) {
 						// if there are more checkpoints, we move to the next one
 						lastCheckpointDate = Time.time;
@@ -139,13 +146,19 @@ public class DynGesture {
 						currentCheckpoint++;
 					}
 					else {
+
 						// gesture done
 						gestureEnded = true;
 						checkpointStarted = false;
 
 						if (Listener != null) {
 							Listener.OnComplete(this);
-						}
+                        }
+                        else
+                        {
+                            Listener = Manager.instance.Actions[0].listener;
+                            Listener.OnComplete(this);
+                        }
 					}
 				}
 			}

@@ -47,10 +47,10 @@ public class KinectAvatar : DummyAvatar {
 	private void UpdateState() {
 		if (Analyzer != null) {
 			// gives the current state to the analyzer
+            Analyzer.Mode = GestureAnalyzer.ModeEnum.ANALYSING;
 			Analyzer.Update(new State(joints));
 		}
 	}
-
 
 	private void UpdateSkeleton() {
 		for (int i = 0; i < joints.Length; i++) {
