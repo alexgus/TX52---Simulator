@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 using System;
 using System.Collections;
@@ -327,7 +327,7 @@ public class KinectWrapper {
 		}
 
 		// check nite directory and resources
-		string sNiTEPath = System.Environment.GetEnvironmentVariable("NITE2_REDIST");
+		string sNiTEPath = System.Environment.GetEnvironmentVariable("NITE2_REDIST64");
 		if (sNiTEPath == String.Empty || !Directory.Exists(sNiTEPath))
 			throw new Exception("NiTE directory not found. Please check the NiTE installation.");
 
