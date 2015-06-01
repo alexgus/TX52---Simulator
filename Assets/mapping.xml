@@ -1,7 +1,7 @@
 <gestureToListener>
 	<mapping>
 		<gesture>Clap.xml</gesture>
-		<listener>ClapAction</listener>
+		<listener>DebugAction</listener>
 	</mapping>
 	<mapping>
 	<gesture>ecarter-bras.xml</gesture>
