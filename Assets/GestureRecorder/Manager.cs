@@ -52,9 +52,9 @@ public class Manager : MonoBehaviour {
             Debug.Log("Loading gesture : " + s);
             // Load old gesture and display it
             DynGesture d = Exporter.import(s);
-            GestureToListenerMapper mapper = new GestureToListenerMapper(Manager.instance.Actions, "./Assets/mapping.xml");
-          //  d.Listener = Manager.instance.Actions[0].listener;
-            d.Listener = Manager.instance.Actions[mapper.GetActionIndexFromGestureName(s)].listener;
+            //GestureToListenerMapper mapper = new GestureToListenerMapper(Manager.instance.Actions, "./Assets/mapping.xml");
+            d.Listener = Manager.instance.Actions[0].listener;
+          //  d.Listener = Manager.instance.Actions[mapper.GetActionIndexFromGestureName(s)].listener;
             Manager.instance.gestures.Add(d);
         }
     }
