@@ -5,6 +5,10 @@ public class KinectAvatar : DummyAvatar {
 	// the nite user id
 	private uint userID = 0;
 
+    public enum MODEAvatar { ANALYSING, RECORDING };
+    public MODEAvatar Mode;
+
+
 	// the analyzer linked to this avatar
 	public GestureAnalyzer Analyzer { get; internal set; }
 
@@ -47,7 +51,9 @@ public class KinectAvatar : DummyAvatar {
 	private void UpdateState() {
 		if (Analyzer != null) {
 			// gives the current state to the analyzer
-            Analyzer.Mode = GestureAnalyzer.ModeEnum.ANALYSING;
+
+            if(Mode == MODEAvatar.ANALYSING)
+                Analyzer.Mode = GestureAnalyzer.ModeEnum.ANALYSING;
 			Analyzer.Update(new State(joints));
 		}
 	}

@@ -3,10 +3,10 @@ using System.Collections;
 
 public class CameraObjectServer : MonoBehaviour {
 	public NetworkPlayer theOwner;
-	float lastClientHInput = 0f;
-	float lastClientVInput = 0f;
-	float serverCurrentHInput = 0f;
-	float serverCurrentVInput = 0f;
+	//float lastClientHInput = 0f;
+	//float lastClientVInput = 0f;
+	//float serverCurrentHInput = 0f;
+	//float serverCurrentVInput = 0f;
 	string m_NickName = "";
 	int hashid;
 	public bool followHim = false;
@@ -53,10 +53,10 @@ public class CameraObjectServer : MonoBehaviour {
 			enabled = true;
 			followHim = true;
 			PlayersList.view = this;
-			Debug.LogError ("Mon nom est "+ getName ());
+			//Debug.LogError ("Mon nom est "+ getName ());
 		}
-		else
-			Debug.LogError ("Connexion de " + getName());
+		/*else
+			Debug.LogError ("Connexion de " + getName());*/
 	}
 	void OnGUI()
 	{
@@ -64,7 +64,7 @@ public class CameraObjectServer : MonoBehaviour {
 	}
 	void Update()
 	{
-			if (theOwner != null && Network.player == theOwner) {
+			if (/*theOwner != null && */Network.player == theOwner) {
 			//if (followHim){
 			
 				Vector3 newPos = this.transform.position;
@@ -102,8 +102,8 @@ public class CameraObjectServer : MonoBehaviour {
 	[RPC]
 	void SendMovementInput(float HInput, float VInput)
 	{
-		serverCurrentHInput = HInput;
-		serverCurrentVInput = VInput;
+		//serverCurrentHInput = HInput;
+		//serverCurrentVInput = VInput;
 	}
 	[RPC]
 	void SendRotationInput(Quaternion r)

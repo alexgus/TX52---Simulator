@@ -146,7 +146,6 @@ public class GestureAnalyzer {
 			}
 		}
 
-
 		if (Mode == ModeEnum.RECORDING) {
 			for (int j = 0; j < curr.Length; j++) {
 				averagePosition[j] += curr[j].position - (last10 != null ? last10[j].position : Vector4.zero);

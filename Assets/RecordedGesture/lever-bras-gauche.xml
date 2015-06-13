@@ -4,65 +4,37 @@
   <isRepetitive>false</isRepetitive>
   <ignoreOtherJoints>true</ignoreOtherJoints>
   <mouvement>
-    <duration>0.8</duration>
+    <duration>0.85</duration>
     <listMC>
       <mouvementCheckPoint>
         <duration>0.1</duration>
         <listJM>
           <jointMouvement>
-            <id>4</id>
-            <percent>33.5675468</percent>
-            <initialPosition>
-              <w>1</w>
-              <x>-0.3311611</x>
-              <y>0.178169727</y>
-              <z>-0.116479948</z>
-            </initialPosition>
-            <finalPosition>
-              <w>1</w>
-              <x>-0.374675632</x>
-              <y>0.205417</y>
-              <z>-0.118417338</z>
-            </finalPosition>
-            <initialAbsolutePosition>
-              <w>1</w>
-              <x>0.273314923</x>
-              <y>3.10665369</y>
-              <z>1.08226693</z>
-            </initialAbsolutePosition>
-            <finalAbsolutePosition>
-              <w>1</w>
-              <x>-0.374675632</x>
-              <y>0.205417</y>
-              <z>-0.118417338</z>
-            </finalAbsolutePosition>
-          </jointMouvement>
-          <jointMouvement>
             <id>6</id>
-            <percent>66.43245</percent>
+            <percent>100</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.425314456</x>
-              <y>-0.0159113277</y>
-              <z>-0.1140544</z>
+              <x>-0.4214131</x>
+              <y>-0.011576388</y>
+              <z>-0.02400223</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.5111024</x>
-              <y>0.0385195762</y>
-              <z>-0.109983683</z>
+              <x>-0.464444041</x>
+              <y>0.0110541973</y>
+              <z>-0.0236418974</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>0.184089482</x>
-              <y>2.91219234</y>
-              <z>1.10986781</z>
+              <x>0.20245111</x>
+              <y>2.91406322</y>
+              <z>1.1106137</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.5111024</x>
-              <y>0.0385195762</y>
-              <z>-0.109983683</z>
+              <x>-0.464444041</x>
+              <y>0.0110541973</y>
+              <z>-0.0236418974</z>
             </finalAbsolutePosition>
           </jointMouvement>
         </listJM>
@@ -72,58 +44,58 @@
         <listJM>
           <jointMouvement>
             <id>4</id>
-            <percent>34.6429062</percent>
+            <percent>33.61487</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.374675632</x>
-              <y>0.205417</y>
-              <z>-0.118417338</z>
+              <x>-0.3495745</x>
+              <y>0.1833632</y>
+              <z>-0.0840802342</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.418042868</x>
-              <y>0.246028885</y>
-              <z>-0.1172154</z>
+              <x>-0.39820084</x>
+              <y>0.21906805</y>
+              <z>-0.08868385</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>0.229168057</x>
-              <y>3.13057566</y>
-              <z>1.078945</z>
+              <x>0.277345359</x>
+              <y>3.09819555</y>
+              <z>1.02429831</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.418042868</x>
-              <y>0.246028885</y>
-              <z>-0.1172154</z>
+              <x>-0.39820084</x>
+              <y>0.21906805</y>
+              <z>-0.08868385</z>
             </finalAbsolutePosition>
           </jointMouvement>
           <jointMouvement>
             <id>6</id>
-            <percent>65.35709</percent>
+            <percent>66.38514</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.5111024</x>
-              <y>0.0385195762</y>
-              <z>-0.109983683</z>
+              <x>-0.464444041</x>
+              <y>0.0110541973</y>
+              <z>-0.0236418974</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.5897305</x>
-              <y>0.117173232</y>
-              <z>-0.09581983</z>
+              <x>-0.55739</x>
+              <y>0.0858788</y>
+              <z>-0.0298824776</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>0.09882027</x>
-              <y>2.96242833</y>
-              <z>1.11463916</z>
+              <x>0.1594601</x>
+              <y>2.93518186</y>
+              <z>1.10219443</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.5897305</x>
-              <y>0.117173232</y>
-              <z>-0.09581983</z>
+              <x>-0.55739</x>
+              <y>0.0858788</y>
+              <z>-0.0298824776</z>
             </finalAbsolutePosition>
           </jointMouvement>
         </listJM>
@@ -133,58 +105,58 @@
         <listJM>
           <jointMouvement>
             <id>4</id>
-            <percent>36.2256126</percent>
+            <percent>34.4872627</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.418042868</x>
-              <y>0.246028885</y>
-              <z>-0.1172154</z>
+              <x>-0.39820084</x>
+              <y>0.21906805</y>
+              <z>-0.08868385</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.45505023</x>
-              <y>0.3010995</y>
-              <z>-0.1155273</z>
+              <x>-0.429683924</x>
+              <y>0.2528738</y>
+              <z>-0.09059603</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>0.184781492</x>
-              <y>3.16806126</y>
-              <z>1.07800126</z>
+              <x>0.228261262</x>
+              <y>3.133846</y>
+              <z>1.01419485</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.45505023</x>
-              <y>0.3010995</y>
-              <z>-0.1155273</z>
+              <x>-0.429683924</x>
+              <y>0.2528738</y>
+              <z>-0.09059603</z>
             </finalAbsolutePosition>
           </jointMouvement>
           <jointMouvement>
             <id>6</id>
-            <percent>63.7743874</percent>
+            <percent>65.51273</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.5897305</x>
-              <y>0.117173232</y>
-              <z>-0.09581983</z>
+              <x>-0.55739</x>
+              <y>0.0858788</y>
+              <z>-0.0298824776</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.652188063</x>
-              <y>0.215921938</y>
-              <z>-0.09504214</z>
+              <x>-0.6123317</x>
+              <y>0.154378861</y>
+              <z>-0.0316327028</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>0.0200992823</x>
-              <y>3.037664</y>
-              <z>1.12713885</z>
+              <x>0.06607473</x>
+              <y>3.007742</y>
+              <z>1.08000863</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.652188063</x>
-              <y>0.215921938</y>
-              <z>-0.09504214</z>
+              <x>-0.6123317</x>
+              <y>0.154378861</y>
+              <z>-0.0316327028</z>
             </finalAbsolutePosition>
           </jointMouvement>
         </listJM>
@@ -194,58 +166,58 @@
         <listJM>
           <jointMouvement>
             <id>4</id>
-            <percent>36.4093666</percent>
+            <percent>34.1963272</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.45505023</x>
-              <y>0.3010995</y>
-              <z>-0.1155273</z>
+              <x>-0.429683924</x>
+              <y>0.2528738</y>
+              <z>-0.09059603</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.477303147</x>
-              <y>0.355246425</y>
-              <z>-0.109960914</z>
+              <x>-0.454111129</x>
+              <y>0.290003568</y>
+              <z>-0.09262517</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>0.148958147</x>
-              <y>3.22674632</y>
-              <z>1.08071315</z>
+              <x>0.194589078</x>
+              <y>3.17030668</y>
+              <z>1.01590025</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.477303147</x>
-              <y>0.355246425</y>
-              <z>-0.109960914</z>
+              <x>-0.454111129</x>
+              <y>0.290003568</y>
+              <z>-0.09262517</z>
             </finalAbsolutePosition>
           </jointMouvement>
           <jointMouvement>
             <id>6</id>
-            <percent>63.59063</percent>
+            <percent>65.80368</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.652188063</x>
-              <y>0.215921938</y>
-              <z>-0.09504214</z>
+              <x>-0.6123317</x>
+              <y>0.154378861</y>
+              <z>-0.0316327028</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.688459754</x>
-              <y>0.3117278</y>
-              <z>-0.102401763</z>
+              <x>-0.6547913</x>
+              <y>0.2277237</y>
+              <z>-0.04377024</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>-0.043120563</x>
-              <y>3.14087963</y>
-              <z>1.12836683</z>
+              <x>0.009411216</x>
+              <y>3.07699847</y>
+              <z>1.0754056</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.688459754</x>
-              <y>0.3117278</y>
-              <z>-0.102401763</z>
+              <x>-0.6547913</x>
+              <y>0.2277237</y>
+              <z>-0.04377024</z>
             </finalAbsolutePosition>
           </jointMouvement>
         </listJM>
@@ -254,59 +226,31 @@
         <duration>0.1</duration>
         <listJM>
           <jointMouvement>
-            <id>4</id>
-            <percent>36.23783</percent>
-            <initialPosition>
-              <w>1</w>
-              <x>-0.477303147</x>
-              <y>0.355246425</y>
-              <z>-0.109960914</z>
-            </initialPosition>
-            <finalPosition>
-              <w>1</w>
-              <x>-0.485710055</x>
-              <y>0.407249659</y>
-              <z>-0.108267762</z>
-            </finalPosition>
-            <initialAbsolutePosition>
-              <w>1</w>
-              <x>0.131172717</x>
-              <y>3.2886188</y>
-              <z>1.08785987</z>
-            </initialAbsolutePosition>
-            <finalAbsolutePosition>
-              <w>1</w>
-              <x>-0.485710055</x>
-              <y>0.407249659</y>
-              <z>-0.108267762</z>
-            </finalAbsolutePosition>
-          </jointMouvement>
-          <jointMouvement>
             <id>6</id>
-            <percent>63.7621727</percent>
+            <percent>100</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.688459754</x>
-              <y>0.3117278</y>
-              <z>-0.102401763</z>
+              <x>-0.6547913</x>
+              <y>0.2277237</y>
+              <z>-0.04377024</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.7011484</x>
-              <y>0.402220219</y>
-              <z>-0.118227385</z>
+              <x>-0.6809947</x>
+              <y>0.295878917</y>
+              <z>-0.0590939075</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>-0.07758027</x>
-              <y>3.24622726</y>
-              <z>1.12196648</z>
+              <x>-0.0345811844</x>
+              <y>3.14938259</y>
+              <z>1.06437945</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.7011484</x>
-              <y>0.402220219</y>
-              <z>-0.118227385</z>
+              <x>-0.6809947</x>
+              <y>0.295878917</y>
+              <z>-0.0590939075</z>
             </finalAbsolutePosition>
           </jointMouvement>
         </listJM>
@@ -315,59 +259,31 @@
         <duration>0.1</duration>
         <listJM>
           <jointMouvement>
-            <id>4</id>
-            <percent>36.920002</percent>
-            <initialPosition>
-              <w>1</w>
-              <x>-0.485710055</x>
-              <y>0.407249659</y>
-              <z>-0.108267762</z>
-            </initialPosition>
-            <finalPosition>
-              <w>1</w>
-              <x>-0.484435856</x>
-              <y>0.4486517</y>
-              <z>-0.108902477</z>
-            </finalPosition>
-            <initialAbsolutePosition>
-              <w>1</w>
-              <x>0.124103606</x>
-              <y>3.34437585</y>
-              <z>1.09730709</z>
-            </initialAbsolutePosition>
-            <finalAbsolutePosition>
-              <w>1</w>
-              <x>-0.484435856</x>
-              <y>0.4486517</y>
-              <z>-0.108902477</z>
-            </finalAbsolutePosition>
-          </jointMouvement>
-          <jointMouvement>
             <id>6</id>
-            <percent>63.079998</percent>
+            <percent>100</percent>
             <initialPosition>
               <w>1</w>
-              <x>-0.7011484</x>
-              <y>0.402220219</y>
-              <z>-0.118227385</z>
+              <x>-0.6809947</x>
+              <y>0.295878917</y>
+              <z>-0.0590939075</z>
             </initialPosition>
             <finalPosition>
               <w>1</w>
-              <x>-0.6973465</x>
-              <y>0.470687032</y>
-              <z>-0.135765865</z>
+              <x>-0.691800833</x>
+              <y>0.339623928</y>
+              <z>-0.0692846</z>
             </finalPosition>
             <initialAbsolutePosition>
               <w>1</w>
-              <x>-0.0908786058</x>
-              <y>3.34031463</y>
-              <z>1.11475146</z>
+              <x>-0.0612717271</x>
+              <y>3.215754</y>
+              <z>1.04446554</z>
             </initialAbsolutePosition>
             <finalAbsolutePosition>
               <w>1</w>
-              <x>-0.6973465</x>
-              <y>0.470687032</y>
-              <z>-0.135765865</z>
+              <x>-0.691800833</x>
+              <y>0.339623928</y>
+              <z>-0.0692846</z>
             </finalAbsolutePosition>
           </jointMouvement>
         </listJM>

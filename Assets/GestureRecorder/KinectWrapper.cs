@@ -328,8 +328,13 @@ public class KinectWrapper {
 
 		// check nite directory and resources
 		string sNiTEPath = System.Environment.GetEnvironmentVariable("NITE2_REDIST64");
-		if (sNiTEPath == String.Empty || !Directory.Exists(sNiTEPath))
-			throw new Exception("NiTE directory not found. Please check the NiTE installation.");
+        if (sNiTEPath == String.Empty || !Directory.Exists(sNiTEPath))
+        {
+            sNiTEPath = System.Environment.GetEnvironmentVariable("NITE2_REDIST");
+            if (sNiTEPath == String.Empty || !Directory.Exists(sNiTEPath))
+                throw new Exception("NiTE directory not found. Please check the NiTE installation.");
+        }
+
 
 		sNiTEPath = sNiTEPath.Replace('\\', '/');
 		if (sNiTEPath.EndsWith("/"))

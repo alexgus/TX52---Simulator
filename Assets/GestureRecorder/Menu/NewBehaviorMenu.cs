@@ -191,6 +191,7 @@ public class NewBehaviorMenu : MonoBehaviour {
 		ges.Listener = Manager.instance.Actions[currentAction].listener;
 
 		mainMenu.GetComponent<MainMenu>().NewGesture(ges);
+        mainMenu.GetComponent<MainMenu>().registerGesture(ges);
 
 		OnMainMenuClick();
 	}

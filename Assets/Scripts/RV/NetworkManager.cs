@@ -7,7 +7,7 @@ public class NetworkManager : MonoBehaviour {
 	private string gameName = "Room";
 	public GameObject playerPrefab;
 	private HostData[] hostList;
-	private NetworkView localNetworkview;
+	//private NetworkView localNetworkview;
 	private Hashtable listPlayers = new Hashtable();
 	private Hashtable listPlayerNetworkView = new Hashtable();
 
@@ -80,9 +80,9 @@ public class NetworkManager : MonoBehaviour {
 	public void SpawnPlayer(NetworkPlayer player)
 	{
 		Vector3 temp = Vector3.zero;
-		temp.x = Random.Range(-25, 25);
-		temp.y = Random.Range(7, 15);
-		temp.z = Random.Range(-25, 25);
+		temp.x = Random.Range(75, 150);
+		temp.y = Random.Range(110, 200);
+		temp.z = Random.Range(50, 100);
 		transform.position = temp;
 
 		GameObject newPlayerTransform = (GameObject)Network.Instantiate(playerPrefab, temp, transform.rotation, 0);
@@ -92,7 +92,7 @@ public class NetworkManager : MonoBehaviour {
 		string name = "Toto "+ Random.Range (0, 50);
 		theNetworkView.RPC("SetPlayer", RPCMode.AllBuffered, player, name);
 		if (Network.player == player) {
-			localNetworkview = theNetworkView;
+			//localNetworkview = theNetworkView;
 			PlayersList.view = (CameraObjectServer) newPlayerTransform.GetComponent<CameraObjectServer>();
 		}
 		listPlayers.Add (player, newPlayerTransform);

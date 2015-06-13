@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class KinectControl2H : MonoBehaviour
 {
-    [Range(0, 1000)]
+    [Range(0, 2)]
     public float tolerance;
 
     private KinectInteractionManager leftManager;
@@ -29,6 +29,7 @@ public class KinectControl2H : MonoBehaviour
         itRobot = robot.GetEnumerator();
         itRobot.MoveNext();
         curRobot = itRobot.Current;
+        itRobot.MoveNext(); /// ???
 	}
 
     // Update is called once per frame
@@ -49,10 +50,9 @@ public class KinectControl2H : MonoBehaviour
         }
         switch (rState)
         {
-            case GripAndFollowState.OPEN_DETECTED: Debug.Log("R OPEN_DETECTED"); curRobot.Stop(Stop.FULLSTOP);  break;
-            case GripAndFollowState.DING: Debug.Log("R DING"); handOrigin = rightData.currPosition; break;
+            case GripAndFollowState.OPEN_DETECTED: curRobot.Stop(Stop.FULLSTOP);  break;
+            case GripAndFollowState.DING: handOrigin = rightData.currPosition; break;
             case GripAndFollowState.FOLLOW: 
-                Debug.Log("R Follow");
                 float ver= rightData.currPosition.y - handOrigin.y;
                 float hor = rightData.currPosition.x - handOrigin.x;
                 //Debug.Log("R RobotControl1H (" + hor + " , " + ver + (" )"));
@@ -82,31 +82,33 @@ public class KinectControl2H : MonoBehaviour
                     curRobot.Stop(Stop.ROTATE);
                 }
                 break;
-            case GripAndFollowState.NONE: Debug.Log("R NONE"); break;
+            case GripAndFollowState.NONE: break;
         }
 
         switch (lState)
         {
-            case GripAndFollowState.OPEN_DETECTED: Debug.Log("L OPEN_DETECTED"); leftDing = false; break;
-            case GripAndFollowState.DING: Debug.Log("L DING");
-                if (!leftDing)
+            case GripAndFollowState.OPEN_DETECTED: leftDing = false; break;
+            case GripAndFollowState.DING: leftDing = true; break;
+            case GripAndFollowState.FOLLOW:
+                if (leftDing)
                 {
+                    curRobot.Stop(Stop.FULLSTOP);
                     nextRobot();
                 }
-                leftDing = true; break;
-            case GripAndFollowState.FOLLOW: Debug.Log("L Follow"); leftDing = false;break ;
-            case GripAndFollowState.NONE: Debug.Log("L NONE"); leftDing = false; break;
+                leftDing = false;
+                break;
+            case GripAndFollowState.NONE: leftDing = false; break;
         }
     }
 
     
     private Robot nextRobot(){
         Debug.Log("Next Robot");
-        if(itRobot.MoveNext()){
+        if(itRobot.MoveNext())
             curRobot = itRobot.Current;
-        }
         else{
             itRobot.Reset();
+            itRobot.MoveNext();
             curRobot = itRobot.Current;
         }
         return curRobot;

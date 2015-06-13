@@ -22,26 +22,9 @@ public class MainMenu : MonoBehaviour {
         LOAD
     }
 
-    public Recorder save = Recorder.SAVE;
-
 	void Start() {
 		dummyGesture.SetActive(false);
-
-        if (save == Recorder.LOAD)
-        {
-            string folderPath = "./Assets/RecordedGesture/";
-            
-        string [] gesturesFiles =  Directory.GetFiles(folderPath, "*.xml");
-        foreach (string s in gesturesFiles)
-        {
-            Debug.Log("Loading gesture : " + s);
-            // Load old gesture and display it
-            DynGesture d = Exporter.import(s);
-            d.Listener = Manager.instance.Actions[0].listener;
-            NewGesture(d);
-        }
-           
-        }
+        this.loadGestures();
    	}
 
 
@@ -53,13 +36,29 @@ public class MainMenu : MonoBehaviour {
 		newBehaviorMenu.transform.localPosition = new Vector3(0, 0, 0);
 	}
 
+    public void loadGestures()
+    {
+        string folderPath = "./Assets/RecordedGesture/";
+
+        string[] gesturesFiles = Directory.GetFiles(folderPath, "*.xml");
+        foreach (string s in gesturesFiles)
+        {
+            Debug.Log("Loading gesture : " + s);
+            // Load old gesture and display it
+            DynGesture d = Exporter.import(s);
+            d.Listener = Manager.instance.Actions[0].listener;
+            NewGesture(d);
+        }
+    }
+
+    public void registerGesture(DynGesture d)
+    {
+        Exporter.export(d);
+    }
 
 	public void NewGesture(DynGesture ges) {
 		// saves the new gesture
 		Manager.instance.gestures.Add(ges);
-
-        if (save == Recorder.SAVE)
-            Exporter.export(ges);
 
 		GameObject newGes = (GameObject)Instantiate(dummyGesture);
 		newGes.SetActive(true);

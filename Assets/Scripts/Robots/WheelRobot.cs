@@ -6,28 +6,6 @@ public class WheelRobot : Robot
     public float turnSpeed = 100.0f; //The turning speed of the robot
 
     public GameObject w1,w2,w3,w4;
-
-    public void avoid(GameObject g)
-    {
-    }
-
-    public void follow(GameObject g)
-    {
-    }
-
-    public void goTo(GameObject g)
-    {
-    }
-
-    public void group(string scheme)
-    {
-    }
-
-    public int sensorSignal()
-    {
-        return 0;
-    }
-
     
     public override void Move(Direction dir, float? distance = null)
     {

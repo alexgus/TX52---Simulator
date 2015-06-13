@@ -130,6 +130,7 @@ public class KinectManager : MonoBehaviour {
 	}
 
 	private void NewUser(int player, uint userId) {
+        Debug.Log("New User : " + player + ", user ID : " + userId);
 		if (objectPlayers[player] != null && objectPlayers[player].activeInHierarchy) {
 			playerID[player] = userId;
 
