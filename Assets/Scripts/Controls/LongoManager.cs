@@ -35,8 +35,7 @@ public class LongoManager : MonoBehaviour, GestureListener {
                 selected.Stop(Stop.FULLSTOP);
                 Debug.Log("robot count : "+this.robots.Count+" cur index = "+index);
                 if(index < this.robots.Count){
-                    index++;
-                    selected = this.robots[index];
+                    selected = this.robots[++index];
                 }
                 else
                 {
