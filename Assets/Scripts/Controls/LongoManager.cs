@@ -33,13 +33,17 @@ public class LongoManager : MonoBehaviour, GestureListener {
         {
             case "Clap":
                 selected.Stop(Stop.FULLSTOP);
-                if(index < this.robots.Count)
-                    selected = this.robots[index++];
+                Debug.Log("robot count : "+this.robots.Count+" cur index = "+index);
+                if(index < this.robots.Count){
+                    index++;
+                    selected = this.robots[index];
+                }
                 else
                 {
                     index = 0;
                     selected = this.robots[index];
                 }
+                Debug.Log("new index= " + index);
                 selected.Stop(Stop.FULLSTOP);
                 break;
             case "forward":
